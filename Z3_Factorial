@@ -1,4 +1,51 @@
-(echo "Hello. Let's start.")
-(define-sort () (Var X Y Z))
-(define-sort () (Lab l1 l2 l3 l4 l5 l6 l? ))
-(declare-fun Entry1   )
+(echo  "starting Factorial Stuff ...")
+
+; creating Var and Lab datatypes 
+; ALL CAPS ???????
+(declare-datatypes () ((Var x y z)))
+(declare-datatypes () ((Lab l1 l2 l3 l4 l5 L6 l?)))
+;(define-sort () (Var x y z))
+;(define-sort () (Lab l1 l2 l3 l4 l5 l6 l? ))
+
+; EN1 STARTS
+(define-fun En1 ((v!1 Var)(l!1 Lab)) Bool 
+  
+  (
+    or  (and (= v!1 x)(= l!1 l?))
+        (and (= v!1 y)(= l!1 l?))
+        (and (= v!1 z)(= l!1 l?))
+  )
+  
+ )  
+ ; EN1 ENDS 
+ 
+ 
+ ; EX1 STARTS
+(define-fun En1 ((v!1 Var)(l!1 Lab)) Bool 
+  
+  (
+    or  (and (= v!1 x)(= l!1 l?))
+        (and (= v!1 y)(= l!1 l1))
+        (and (= v!1 z)(= l!1 l?))
+  )
+  
+ )  
+ ; EX1 ENDS 
+ 
+ (assert 
+   
+   (forall ((v!1 Var)(l!1 Lab)) 
+     
+        (ite 
+              (= v!1 y)  ; if v equals y
+               , () ; then this line           
+               , (ite
+                      (= l l!1)  ; if this
+                      ,(Ex1 v l); then this
+                      ,(not (Ex1 v l) ); else this
+                        
+                 )
+               , (= (Ex1 V!1 l!1)(En1 V!1 l!1)); else this line 
+         )
+   )
+ )
