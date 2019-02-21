@@ -1,4 +1,4 @@
-(echo "Hello")
-(define-sort Var X Y Z)
-(define-sort Lab l1 l2 l3 l4 l5 l6 l? )
+(echo "Hello. Let's start.")
+(define-sort () (Var X Y Z))
+(define-sort () (Lab l1 l2 l3 l4 l5 l6 l? ))
 (declare-fun Entry1   )
