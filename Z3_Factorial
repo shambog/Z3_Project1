@@ -46,11 +46,24 @@
          )
    )
  )
-  (assert (forall ((v!1 V) (l!1 L))
-   ()
+ 
+ 
+ 
+ (define-fun En2 ((v!1 V)(l!1 L)) Bool 
+ 
+          (assert (forall ((v!1 V) (l!1 L))
    
+                        (= (En2 v!1)(Ex1 v!1)) ; EXIT OF LABEL-1 AND ENTRY OF LABEL-2 ARE THE SAME 
    
-   
+                  )
+          )
  )
+ 
+ 
+ 
+ 
+ 
+ 
+  
  
  
