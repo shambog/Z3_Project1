@@ -1,4 +1,4 @@
-(echo  "starting Factorial Stuff ...")
+(echo  "starting Factorial ...")
 
 ; creating Var and Lab datatypes 
 ; ALL CAPS ???????
@@ -9,9 +9,9 @@
 (define-fun En1 ((v!1 V)(l!1 L)) Bool 
   
   (
-    or  (and (= v!1 X)(= l1 l?))
-        (and (= v!1 Y)(= l1 l?))
-        (and (= v!1 Z)(= l1 l?))
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l?))
+        (and (= v!1 Z)(= l!1 l?))
   )
   
  )  
@@ -32,10 +32,10 @@
  
  (assert 
    
-   (forall ((v!1 Var)(l!1 Lab)) 
+   (forall ((v!1 V)(l!1 L)) 
      
         (ite 
-              (= v!1 y)  ; if v equals y
+              (= v!1 Y)  ; if v equals y
                , () ; then this line           
                , (ite
                       (= l l!1)  ; if this
