@@ -17,7 +17,6 @@
  )  
  ; EN1 ENDS 
  
- 
  ; EX1 STARTS
 (define-fun En1 ((v!1 V)(l!1 L)) Bool 
   
@@ -35,15 +34,15 @@
    (forall ((v!1 V)(l!1 L)) 
      
         (ite 
-              (= v!1 Y)  ; if v equals y
-               , () ; then this line           
-               , (ite
-                      (= l l!1)  ; if this
-                      ,(Ex1 v l); then this
-                      ,(not (Ex1 v l) ); else this
+              (= v!1 Y),  ; if y is of type var
+                          
+                (ite
+                      (= l!1 l1),   
+                      (Ex1 v!1 l!1),                      ; then this
+                      (not (Ex1 v!1 l!1) ); else this
                         
-                 )
-               , (= (Ex1 V!1 l!1)(En1 V!1 l!1)); else this line 
+                 ),
+                (= (Ex1 v!1 l!1)(En1 v!1 l!1)); else this line 
          )
    )
  )
