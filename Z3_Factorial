@@ -18,7 +18,7 @@
  ; EN1 ENDS 
  
  ; EX1 STARTS
-(define-fun En1 ((v!1 V)(l!1 L)) Bool 
+(define-fun Ex1 ((v!1 V)(l!1 L)) Bool 
   
   (
     or  (and (= v!1 X)(= l!1 l?))
@@ -29,20 +29,28 @@
  )  
  ; EX1 ENDS 
  
- (assert 
+ (assert                        ; LINKING ENTRY-1 WITH EXIT-1
    
    (forall ((v!1 V)(l!1 L)) 
      
         (ite 
-              (= v!1 Y),  ; if y is of type var
+              (= v!1 Y)
                           
                 (ite
-                      (= l!1 l1),   
-                      (Ex1 v!1 l!1),                      ; then this
+                      (= l!1 l1)
+                      (Ex1 v!1 l!1)                      
                       (not (Ex1 v!1 l!1) ); else this
                         
-                 ),
+                 )
                 (= (Ex1 v!1 l!1)(En1 v!1 l!1)); else this line 
          )
    )
  )
+  (assert (forall ((v!1 V) (l!1 L))
+   ()
+   
+   
+   
+ )
+ 
+ 
