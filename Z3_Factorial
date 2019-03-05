@@ -225,5 +225,19 @@
  (echo " ---------------------------- ") 
  (echo " Asserting that entry-3 can have assignments from both exit-2 or exit-5  ")
  (check-sat)
+ 
+ ; ASSERTION 5
+ 
+ (assert
+   
+   (forall ((v V)(l L))
+     (= (En3 v l)(Ex3 v l))
+     
+   )
+   
+ )
+(echo " ---------------------------- ") 
+(echo " Asserting that exit-3 equals entry-3 ")
+(check-sat) 
 
  
