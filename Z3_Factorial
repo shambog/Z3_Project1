@@ -182,5 +182,27 @@
 (echo " Asserting that exit-1 equals entry-2 ")
 (check-sat) 
 
+; ASSERTION 3
+
+(assert                     
+   
+   (forall ((v V)(l L)) 
+     
+        (ite 
+              (= v Z)
+                          
+                (ite
+                      (= l l2)
+                      (Ex2 v l)                      
+                      (not (Ex2 v l) ); else this
+                        
+                 )
+                (= (En2 v l)(Ex2 v l)); else this line 
+         )
+   )
+ )
+ (echo " ---------------------------- ") 
+ (echo " Asserting that Z has an assignment in label 2 ")
+ (check-sat)
 
  
