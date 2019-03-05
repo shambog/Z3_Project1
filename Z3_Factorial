@@ -50,7 +50,11 @@
  
  
  (define-fun En2 ((v!1 V)(l!1 L)) Bool 
- 
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
        
  )
  
@@ -59,10 +63,10 @@
  
  (define-fun Ex2 ((v!1 V)(l!1 L)) Bool 
   
-  (
+    (
     or  (and (= v!1 X)(= l!1 l?))
         (and (= v!1 Y)(= l!1 l1))
-        (and (= v!1 Z)(= l!1 l?))
+        (and (= v!1 Z)(= l!1 l2))
   )
   
  ) 
@@ -72,7 +76,9 @@
   (
     or  (and (= v!1 X)(= l!1 l?))
         (and (= v!1 Y)(= l!1 l1))
-        (and (= v!1 Z)(= l!1 l?))
+        (and (= v!1 Z)(= l!1 l2))
+        (and (= v!1 Z)(= l!1 l4))
+        (and (= v!1 Y)(= l!1 l5))
   )
   
  ) 
