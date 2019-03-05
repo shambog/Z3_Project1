@@ -254,3 +254,16 @@
 (echo " Asserting that exit-3 equals entry-4 ")
 (check-sat) 
  
+; ASSERTION 7
+ 
+ (assert
+   
+   (forall ((v V)(l L))
+     (= (Ex4 v l)(En5 v l))
+     
+   )
+   
+ )
+(echo " ---------------------------- ") 
+(echo " Asserting that exit-4 equals entry-5 ")
+(check-sat) 
