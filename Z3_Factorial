@@ -1,5 +1,5 @@
-(echo  "starting Factorial ...")
-
+(echo  "STARTING FACTORIAL ...")
+(echo " ---------------------------- ") 
 ; creating Var and Lab datatypes 
 
 (declare-datatypes () ((V X Y Z)))
@@ -144,8 +144,10 @@
   )
   
  )
+ ; ASSERTIONS START HERE 
  
- (assert                        ; LINKING ENTRY-1 WITH EXIT-1
+ ; ASSERTION 1
+ (assert                     
    
    (forall ((v V)(l L)) 
      
@@ -162,9 +164,11 @@
          )
    )
  )
+ (echo " ---------------------------- ") 
  (echo " Asserting that Y has an assignment in label 1 ")
  (check-sat)
 
+; ASSERTION 2
  
  (assert
    
@@ -174,7 +178,9 @@
    )
    
  )
- 
+(echo " ---------------------------- ") 
 (echo " Asserting that exit-1 equals entry-2 ")
 (check-sat) 
+
+
  
