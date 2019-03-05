@@ -51,19 +51,109 @@
  
  (define-fun En2 ((v!1 V)(l!1 L)) Bool 
  
-          (assert (forall ((v!1 V) (l!1 L))
-   
-                        (= (En2 v!1)(Ex1 v!1)) ; EXIT OF LABEL-1 AND ENTRY OF LABEL-2 ARE THE SAME 
-   
-                  )
-          )
+       
+ )
+ 
+ ;;;;; here
+ 
+ 
+ (define-fun Ex2 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ ) 
+ 
+ (define-fun En3 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ ) 
+ 
+  (define-fun Ex3 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ ) 
+ 
+ 
+ (define-fun En4 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ ) 
+ 
+  (define-fun Ex4 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
  )
  
  
  
- 
- 
- 
+ (define-fun En5 ((v!1 V)(l!1 L)) Bool 
   
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ ) 
  
+  (define-fun Ex5 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ )
  
+ (define-fun En6 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ ) 
+ 
+  (define-fun Ex6 ((v!1 V)(l!1 L)) Bool 
+  
+  (
+    or  (and (= v!1 X)(= l!1 l?))
+        (and (= v!1 Y)(= l!1 l1))
+        (and (= v!1 Z)(= l!1 l?))
+  )
+  
+ )
+
+
+   (assert (forall ((v!1 V) (l!1 L))
+   
+                        (= (En2 v!1)(Ex1 v!1)) ; EXIT OF LABEL-1 AND ENTRY OF LABEL-2 ARE THE SAME 
+   
+                  )
+          ) 
