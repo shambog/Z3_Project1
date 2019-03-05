@@ -1,7 +1,7 @@
 (echo  "starting Factorial ...")
 
 ; creating Var and Lab datatypes 
-; ALL CAPS ???????
+
 (declare-datatypes () ((V X Y Z)))
 (declare-datatypes () ((L l1 l2 l3 l4 l5 l6 l?)))
 
@@ -28,26 +28,6 @@
   
  )  
  ; EX1 ENDS 
- 
- (assert                        ; LINKING ENTRY-1 WITH EXIT-1
-   
-   (forall ((v!1 V)(l!1 L)) 
-     
-        (ite 
-              (= v!1 Y)
-                          
-                (ite
-                      (= l!1 l1)
-                      (Ex1 v!1 l!1)                      
-                      (not (Ex1 v!1 l!1) ); else this
-                        
-                 )
-                (= (Ex1 v!1 l!1)(En1 v!1 l!1)); else this line 
-         )
-   )
- )
- 
- 
  
  (define-fun En2 ((v!1 V)(l!1 L)) Bool 
   (
@@ -164,4 +144,23 @@
   )
   
  )
-
+ 
+ (assert                        ; LINKING ENTRY-1 WITH EXIT-1
+   
+   (forall ((v!1 V)(l!1 L)) 
+     
+        (ite 
+              (= v!1 Y)
+                          
+                (ite
+                      (= l!1 l1)
+                      (Ex1 v!1 l!1)                      
+                      (not (Ex1 v!1 l!1) ); else this
+                        
+                 )
+                (= (Ex1 v!1 l!1)(En1 v!1 l!1)); else this line 
+         )
+   )
+ )
+ (echo " Asserting if En1 and En2 are linked & Y has an assignment ")
+ (check-sat)
