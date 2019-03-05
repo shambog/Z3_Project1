@@ -204,5 +204,26 @@
  (echo " ---------------------------- ") 
  (echo " Asserting that Z has an assignment in label 2 ")
  (check-sat)
+ 
+ ; ASSERTION 4
+ 
+(assert                     
+   
+   (forall ((v V)(l L)) 
+     
+      (= (En3 v l)
+            
+            (or 
+              (Ex2 v l)
+              (Ex5 v l)  
+            )  
+      )                        
+         
+   )
+ ) 
+ 
+ (echo " ---------------------------- ") 
+ (echo " Asserting that entry-3 can have assignments from both exit-2 or exit-5  ")
+ (check-sat)
 
  
