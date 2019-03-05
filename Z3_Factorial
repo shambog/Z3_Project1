@@ -147,20 +147,34 @@
  
  (assert                        ; LINKING ENTRY-1 WITH EXIT-1
    
-   (forall ((v!1 V)(l!1 L)) 
+   (forall ((v V)(l L)) 
      
         (ite 
-              (= v!1 Y)
+              (= v Y)
                           
                 (ite
-                      (= l!1 l1)
-                      (Ex1 v!1 l!1)                      
-                      (not (Ex1 v!1 l!1) ); else this
+                      (= l l1)
+                      (Ex1 v l)                      
+                      (not (Ex1 v l) ); else this
                         
                  )
-                (= (Ex1 v!1 l!1)(En1 v!1 l!1)); else this line 
+                (= (Ex1 v l)(En1 v l)); else this line 
          )
    )
  )
- (echo " Asserting if En1 and En2 are linked & Y has an assignment ")
+ (echo " Asserting that Y has an assignment in label 1 ")
  (check-sat)
+
+ 
+ (assert
+   
+   (forall ((v V)(l L))
+     (= (En2 v l)(Ex1 v l))
+     
+   )
+   
+ )
+ 
+(echo " Asserting that exit-1 equals entry-2 ")
+(check-sat) 
+ 
