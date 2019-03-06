@@ -341,17 +341,21 @@
    
  (forall ((v V)(l L)) 
      
-        (ite 
-                (and (= v Y)(Ex6 v l))
-                (= l? l)              
-                (not (Ex6 v l) ); else this
-                        
-         )
+   
+          (not 
+              (and (= v X)(= l l?))
+          )
+                          
+  
            
          )
    )
  
-(echo " ---------------------------- ) 
-(echo " Assert")
+(echo " ---------------------------- ") 
+(echo " Asserting that it is not true that X is never assigned any value to be unsat ")
+(echo"This means that X is never assigned any value")
 (check-sat)
+
+
+
 
