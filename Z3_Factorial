@@ -335,4 +335,23 @@
  (echo " Asserting that assignment on Z at label-6 can be from either exit-2 or exit-4  ")
  (check-sat)
  
+ ; ASSERTION 11
+ 
+ (assert
+   
+ (forall ((v V)(l L)) 
+     
+        (ite 
+                (and (= v Y)(Ex6 v l))
+                (= l? l)              
+                (not (Ex6 v l) ); else this
+                        
+         )
+           
+         )
+   )
+ 
+(echo " ---------------------------- ") 
+(echo " Assert")
+(check-sat)
 
