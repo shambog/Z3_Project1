@@ -255,21 +255,6 @@
 (check-sat) 
  
 ; ASSERTION 7
- 
- (assert
-   
-   (forall ((v V)(l L))
-     (= (Ex4 v l)(En5 v l))
-     
-   )
-   
- )
-(echo " ---------------------------- ") 
-(echo " Asserting that exit-4 equals entry-5 ")
-(check-sat) 
-
-
-; ASSERTION 8
 
 (assert                     
    
@@ -291,3 +276,41 @@
  (echo " ---------------------------- ") 
  (echo " Asserting that exit-4 does not have the assignment on Z from label-2   ")
  (check-sat)
+ 
+; ASSERTION 8
+
+ (assert
+   
+   (forall ((v V)(l L))
+     (= (Ex4 v l)(En5 v l))
+     
+   )
+   
+ )
+(echo " ---------------------------- ") 
+(echo " Asserting that exit-4 equals entry-5 ")
+(check-sat) 
+
+ ; ASSERTION 9
+
+(assert                     
+   
+   (forall ((v V)(l L)) 
+     
+        (ite 
+              (= v Y)
+                          
+                (ite
+                      (= l l5)
+                      (Ex5 v l)                      
+                      (not (Ex5 v l) ); else this
+                        
+                 )
+                (= (En5 v l)(Ex5 v l)); else this line 
+         )
+   )
+ )
+ (echo " ---------------------------- ") 
+ (echo " Asserting that exit-5 does not have the assignment on Y from label-1   ")
+ (check-sat)
+
