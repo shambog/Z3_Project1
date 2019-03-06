@@ -343,7 +343,7 @@
      
    
           (not 
-              (and (= v X)(= l l?))
+             (and (and (= v X)(= l l?)) (Ex6 v l))  ; also works for (and (= v X)(= l l?))
           )
                           
   
