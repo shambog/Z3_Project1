@@ -313,4 +313,26 @@
  (echo " ---------------------------- ") 
  (echo " Asserting that exit-5 does not have the assignment on Y from label-1   ")
  (check-sat)
+ 
+ ; ASSERTION 10
+ 
+(assert                     
+   
+   (forall ((v V)(l L)) 
+     
+      (= (En6 v l)
+            
+            (or 
+              (Ex2 v l)
+              (Ex4 v l)  
+            )  
+      )                        
+         
+   )
+ ) 
+ 
+ (echo " ---------------------------- ") 
+ (echo " Asserting that assignment on Z at label-6 can be from either exit-2 or exit-4  ")
+ (check-sat)
+ 
 
